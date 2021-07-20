@@ -13,13 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* Guest Routes */
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('posts', PostController::class)->only(['index', 'show']);
+
 
 Auth::routes();
 
 
+/* Admin Routes */
 Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function ()
 {
     Route::get('/', 'HomeController@index')->name('dashboard');
