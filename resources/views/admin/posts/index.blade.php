@@ -3,6 +3,7 @@
 @section('content')
 
     <div class="container">
+        <a name="" id="" class="btn btn-primary mb-4" href="{{route('admin.posts.create')}}" role="button">Add New Post</a>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -21,8 +22,8 @@
                         <td>{{$post->title}}</td>
                         <td>{{$post->summary}}</td>
                         <td>
-                            <a href="#">View</a>|
-                            <a href="#">Edit</a>|
+                            <a href="#">View</a> |
+                            <a href="#">Edit</a> |
                             <a href="#">Delete</a>
                         </td>
                     </tr>
