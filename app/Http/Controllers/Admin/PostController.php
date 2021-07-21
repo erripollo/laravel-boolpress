@@ -100,6 +100,6 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        $poduct->delete();
+        $post->delete();
     }
 }
