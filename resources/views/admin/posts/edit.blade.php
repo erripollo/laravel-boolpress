@@ -44,9 +44,13 @@
             @error('body')
                 <div class="alert alert-danger">{{$message}}</div>
             @enderror
-    
+            
             <div class="form-group">
-              <label for="image">Image</label>
+                <h4>Current image</h4>
+                <img width="200" src="{{$post->image}}" alt="">
+            </div>
+            <div class="form-group">
+              <label for="image">Change Image url</label>
               <input type="url" name="image" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Add a post image url" aria-describedby="imageHelper" max="255" value="{{$post->image}}">
               <small id="imageHelper" class="text-muted">Type a image url for this post</small>
             </div>
