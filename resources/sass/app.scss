@@ -1,8 +1,45 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+//commons
+h1 {
+    color: white;
+}
+
+//jumbotron
+.jumbotron {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+//main
+main {
+    color: lightgray;
+    a {
+        transition: 0.5s;
+        &:hover {
+            text-decoration-color: white;
+        }
+        &:hover img {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .card {
+            border: none;
+            background-color: transparent;
+            color: white;
+
+            img {
+                border-radius: 1rem;
+                transition: 0.5s;
+            }
+        }
+    }
+}
