@@ -58,7 +58,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('admim.posts.show', compact('post'));
     }
 
     /**
@@ -69,7 +69,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -81,7 +81,15 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required | min:5 | max:100',
+            'summary' => 'nullable | min:5 | max:255',
+            'image' => 'nullable | max:255',
+            'body' => 'nullable'
+        ]);
+
+        $post->update($validated);
+        return redirect()->route('admin.posts.index');
     }
 
     /**
@@ -92,6 +100,6 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $poduct->delete();
     }
 }

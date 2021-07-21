@@ -21,7 +21,7 @@
     
             <div class="form-group">
               <label for="title">Title</label>
-              <input type="text" name="title" id="" class="form-control @error('title') is-invalid @enderror" placeholder="Add a post title" aria-describedby="titleHelper" max="100" value="{{old('title')}}">
+              <input type="text" name="title" id="" class="form-control @error('title') is-invalid @enderror" placeholder="Add a post title" aria-describedby="titleHelper" max="100" value="{{old('title')}}" required>
               <small id="titleHelper" class="text-muted">Type a title for this post</small>
             </div>
             @error('title')
