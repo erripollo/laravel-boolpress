@@ -10,6 +10,7 @@ class PageController extends Controller
     public function home()
     {
         $posts = Post::all();
+        //dd($posts);
         return view('guest.welcome', compact('posts'));
     }
 }
