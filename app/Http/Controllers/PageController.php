@@ -13,4 +13,5 @@ class PageController extends Controller
         //dd($posts);
         return view('guest.welcome', compact('posts'));
     }
+
 }
