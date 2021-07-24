@@ -34,11 +34,11 @@
                     <li class="nav-item {{Route::currentRouteName() === 'home' ? 'active' : '' }}">
                       <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item {{Route::currentRouteName() === 'posts.index' ? 'active' : '' }}">
-                      <a class="nav-link" href="{{route('posts.index')}}">Posts</a>
-                    </li>
-                    <li class="nav-item {{Route::currentRouteName() === 'about' ? 'active' : '' }}">
+                     <li class="nav-item {{Route::currentRouteName() === 'about' ? 'active' : '' }}">
                         <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item {{Route::currentRouteName() === 'posts.index' ? 'active' : '' }}">
+                      <a class="nav-link" href="{{route('posts.index')}}">Blog</a>
                     </li>
                     <li class="nav-item {{Route::currentRouteName() === 'contacts' ? 'active' : '' }}">
                         <a class="nav-link" href="#">Contacts</a>
@@ -91,7 +91,7 @@
 
           <div class="jumbotron">
               <div class="container">
-                  <h1 class="display-3">Jumbo heading</h1>
+                  <h1 class="display-3">Boolpress</h1>
                   <p class="lead">Jumbo helper text</p>
                   <hr class="my-2">
                   <p>More info</p>
