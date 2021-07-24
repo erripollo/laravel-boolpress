@@ -41,7 +41,7 @@
                       <a class="nav-link" href="{{route('posts.index')}}">Blog</a>
                     </li>
                     <li class="nav-item {{Route::currentRouteName() === 'contacts' ? 'active' : '' }}">
-                        <a class="nav-link" href="#">Contacts</a>
+                        <a class="nav-link" href="{{route('contacts')}}">Contacts</a>
                     </li>
                   </ul>
                   <!-- Right Side Of Navbar -->
