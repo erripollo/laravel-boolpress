@@ -87,6 +87,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        //dd($request->all(), $post);
         $validated = $request->validate([
             'title' => 'required | min:5 | max:100',
             'summary' => 'nullable | min:5 | max:255',
@@ -96,7 +97,8 @@ class PostController extends Controller
 
         if (array_key_exists('image', $validated)) {
             $file_path = Storage::put('posts_images', $validated['image']);
-            $validated['image'] = $file_path; 
+            $validated['image'] = $file_path;
+            Storage::delete($post['image']);
         }
 
         $post->update($validated);
