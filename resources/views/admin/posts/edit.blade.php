@@ -16,7 +16,7 @@
             
         @endif
         
-        <form action="{{route('admin.posts.update', $post->id)}}" method="post">
+        <form action="{{route('admin.posts.update', $post->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -47,12 +47,18 @@
             
             <div class="form-group">
                 <h4>Current image</h4>
-                <img width="200" src="{{$post->image}}" alt="">
+                <img width="200" src="{{asset('storage/' . $post->image)}}" alt="">
             </div>
-            <div class="form-group">
+           {{--  <div class="form-group">
               <label for="image">Change Image url</label>
               <input type="url" name="image" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Add a post image url" aria-describedby="imageHelper" max="255" value="{{$post->image}}">
               <small id="imageHelper" class="text-muted">Type a image url for this post</small>
+            </div> --}}
+
+            <div class="form-group">
+              <label for="image">Change Image</label>
+              <input type="file" class="form-control-file" name="image" id="image" placeholder="Change post image" aria-describedby="imageHelper">
+              <small id="imageHelper" class="form-text text-muted">Change image for this post</small>
             </div>
             @error('image')
                 <div class="alert alert-danger">{{$message}}</div>

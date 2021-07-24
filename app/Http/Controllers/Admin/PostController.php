@@ -47,8 +47,11 @@ class PostController extends Controller
             'body' => 'nullable'
         ]);
 
-        $file_path = Storage::put('posts_images', $validated['image']);
-        $validated['image'] = $file_path;
+        if ($request->hasFile('image')) {
+            $file_path = Storage::put('posts_images', $validated['image']);
+            $validated['image'] = $file_path; 
+        }
+        
         Post::create($validated);
         return redirect()->route('admin.posts.index');
     }
@@ -87,9 +90,14 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => 'required | min:5 | max:100',
             'summary' => 'nullable | min:5 | max:255',
-            'image' => 'nullable | max:255',
+            'image' => 'nullable | image | max:150',
             'body' => 'nullable'
         ]);
+
+        if (array_key_exists('image', $validated)) {
+            $file_path = Storage::put('posts_images', $validated['image']);
+            $validated['image'] = $file_path; 
+        }
 
         $post->update($validated);
         return redirect()->route('admin.posts.index');
