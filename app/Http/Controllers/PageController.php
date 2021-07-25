@@ -9,7 +9,7 @@ class PageController extends Controller
 {
     public function home()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('id', 'DESC')->take(5)->get();
         //dd($posts);
         return view('guest.welcome', compact('posts'));
     }
