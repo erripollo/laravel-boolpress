@@ -19,16 +19,18 @@
                      $i = 1;
                  @endphp --}}
                 @foreach ($posts as $key => $post)
-                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                             {{-- @php
                                 $i++;
-                            @endphp --}}
+                                @endphp --}}
+                        <a href="{{route('posts.show', $post->id)}}">
                             <img height="600px" src="{{asset('storage/' . $post->image)}}" class="d-block w-100" alt="..." style="object-fit: cover;">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>{{$post->title}}</h5>
                                 <p>{{$post->summary}}</p>
                             </div>
-                        </div>
+                        </a>
+                    </div>
                 @endforeach
             
 

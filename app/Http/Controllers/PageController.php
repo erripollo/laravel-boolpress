@@ -14,4 +14,24 @@ class PageController extends Controller
         return view('guest.welcome', compact('posts'));
     }
 
+
+
+    public function search(Request $request)
+    {
+        //dd($request);
+
+        $search = $request->input('search');
+        //dd($search);
+
+        $posts = Post::query()
+            ->orderBy('id', 'DESC')
+            ->where('title', 'LIKE', "%{$search}")
+            ->orWhere('summary', 'LIKE', "%{$search}%")
+            ->orWhere('body', 'LIKE', "%{$search}%")
+            ->get();
+
+
+    
+        return view('guest.search', compact('posts'));
+    }
 }

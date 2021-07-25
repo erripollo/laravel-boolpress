@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 /* Guest Routes */
 Route::get('/', 'PageController@home')->name('home');
+Route::get('search', 'PageController@search')->name('search');
 
 Route::get('contacts', 'ContactController@form')->name('contacts');
 Route::post('contacts', 'ContactController@send')->name('contacts.send');
