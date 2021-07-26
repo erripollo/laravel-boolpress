@@ -25,7 +25,7 @@ class PageController extends Controller
 
         $posts = Post::query()
             ->orderBy('id', 'DESC')
-            ->where('title', 'LIKE', "%{$search}")
+            ->where('title', 'LIKE', "%{$search}%")
             ->orWhere('summary', 'LIKE', "%{$search}%")
             ->orWhere('body', 'LIKE', "%{$search}%")
             ->get();

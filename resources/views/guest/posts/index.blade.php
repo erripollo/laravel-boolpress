@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container main_blog">
        <div class="row">
             @foreach ($posts as $post)
                 <div class="col-md-4 mb-4">

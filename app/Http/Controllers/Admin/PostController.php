@@ -43,7 +43,7 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => 'required | min:5 | max:100',
             'summary' => 'nullable | min:5 | max:255',
-            'image' => 'nullable | image | max:150',
+            'image' => 'nullable | image | max:250',
             'body' => 'nullable'
         ]);
 
@@ -91,7 +91,7 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => 'required | min:5 | max:100',
             'summary' => 'nullable | min:5 | max:255',
-            'image' => 'nullable | image | max:150',
+            'image' => 'nullable | image | max:250',
             'body' => 'nullable'
         ]);
 

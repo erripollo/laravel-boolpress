@@ -10979,3 +10979,25 @@ main a .card img {
   transition: 0.5s;
 }
 
+.carousel-inner {
+  border-radius: 1rem;
+}
+
+.carousel-inner img {
+  filter: brightness(0.7);
+}
+
+.main_blog .card-img-top {
+  height: 230px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main_search .post-list:hover img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.main_search .post-list img {
+  border-radius: 1rem;
+}
+

@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <h1>Last Posts</h1>
+        <h1 class="mb-4">Last Posts</h1>
 
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -26,8 +26,8 @@
                         <a href="{{route('posts.show', $post->id)}}">
                             <img height="600px" src="{{asset('storage/' . $post->image)}}" class="d-block w-100" alt="..." style="object-fit: cover;">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>{{$post->title}}</h5>
-                                <p>{{$post->summary}}</p>
+                                <h2 class="display-4">{{$post->title}}</h5>
+                                <p class="lead">{{$post->summary}}</p>
                             </div>
                         </a>
                     </div>
