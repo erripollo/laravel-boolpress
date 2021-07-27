@@ -78,7 +78,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        $categories = Category::all();
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**
@@ -95,6 +96,7 @@ class PostController extends Controller
             'title' => 'required | min:5 | max:100',
             'summary' => 'nullable | min:5 | max:255',
             'image' => 'nullable | image | max:250',
+            'category_id' => 'nullable | exists:categories,id',
             'body' => 'nullable'
         ]);
 
