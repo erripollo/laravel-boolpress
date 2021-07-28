@@ -83,7 +83,8 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::all();
-        return view('admin.posts.edit', compact('post', 'categories'));
+        $tags = Tag::all();
+        return view('admin.posts.edit', compact('post', 'categories', 'tags'));
     }
 
     /**
@@ -101,6 +102,7 @@ class PostController extends Controller
             'summary' => 'nullable | min:5 | max:255',
             'image' => 'nullable | image | max:250',
             'category_id' => 'nullable | exists:categories,id',
+            'tags' => 'nullable | exists:tags,id',
             'body' => 'nullable'
         ]);
 
@@ -111,6 +113,7 @@ class PostController extends Controller
         }
 
         $post->update($validated);
+        $post->tags()->sync($request->tags);
         return redirect()->route('admin.posts.index');
     }
 
@@ -122,8 +125,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        $post->delete();
+        $post->tags()->detach();
         Storage::delete($post['image']);
+        $post->delete();
         return redirect()->route('admin.posts.index');
     }
 }

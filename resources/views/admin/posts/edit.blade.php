@@ -49,11 +49,6 @@
                 <h4>Current image</h4>
                 <img width="200" src="{{asset('storage/' . $post->image)}}" alt="">
             </div>
-           {{--  <div class="form-group">
-              <label for="image">Change Image url</label>
-              <input type="url" name="image" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Add a post image url" aria-describedby="imageHelper" max="255" value="{{$post->image}}">
-              <small id="imageHelper" class="text-muted">Type a image url for this post</small>
-            </div> --}}
 
             <div class="form-group">
               <label for="image">Change Image</label>
@@ -74,6 +69,25 @@
                   @endforeach
                 </select>
             </div>
+
+            <div class="form-group">
+                <label for="tags">Tags</label>
+                <select multiple class="form-control" name="tags[]" id="tags">
+                    <option value="" disabled>Select a Tag</option>
+                    @if ($tags)
+                          @foreach ($tags as $tag)
+                            @if ($errors->any())
+                                <option value="{{ $tag->id }}" {{ in_array($tag->id, old('tags')) ? 'selected' : '' }}> {{ $tag->name }} </option>
+                            @else
+                                <option value="{{ $tag->id }}" {{ $post->tags->contains($tag) ? 'selected' : '' }}>{{ $tag->name }}</option>
+                            @endif
+                          @endforeach   
+                    @endif
+                </select>
+              </div>
+              @error('tags')
+                  <div class="alert alert-danger">{{$message}}</div>
+              @enderror
 
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
         </form>
