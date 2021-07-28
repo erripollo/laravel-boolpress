@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Tag;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Post;
@@ -29,7 +30,8 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.posts.create', compact('categories'));
+        $tags = Tag::all();
+        return view('admin.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -47,6 +49,7 @@ class PostController extends Controller
             'summary' => 'nullable | min:5 | max:255',
             'image' => 'nullable | image | max:250',
             'category_id' => 'nullable | exists:categories,id',
+            'tags' => 'nullable | exists:tags,id',
             'body' => 'nullable'
         ]);
 
@@ -55,7 +58,8 @@ class PostController extends Controller
             $validated['image'] = $file_path; 
         }
         
-        Post::create($validated);
+        $post = Post::create($validated);
+        $post->tags()->attach($request->tags);
         return redirect()->route('admin.posts.index');
     }
 

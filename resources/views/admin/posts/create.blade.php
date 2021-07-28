@@ -70,6 +70,21 @@
                 @endforeach
               </select>
             </div>
+            @error('category_id')
+                <div class="alert alert-danger">{{$message}}</div>
+            @enderror
+
+            <div class="form-group">
+              <label for="tags">Tags</label>
+              <select multiple class="form-control" name="tags[]" id="tags">
+                  <option value="" disabled>Select a Tag</option>
+                  @if ($tags)
+                        @foreach ($tags as $tag)
+                            <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                        @endforeach   
+                  @endif
+              </select>
+            </div>
 
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
         </form>
