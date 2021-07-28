@@ -20,8 +20,12 @@ Route::get('search', 'PageController@search')->name('search');
 Route::get('contacts', 'ContactController@form')->name('contacts');
 Route::post('contacts', 'ContactController@send')->name('contacts.send');
 
-
+/* Pagine dei Posts */
 Route::resource('posts', PostController::class)->only(['index', 'show']);
+
+/* Pagine categories */
+Route::get('categories/{category:slug}', 'CategoryController@show')->name('categories.show');
+
 
 Auth::routes();
 
