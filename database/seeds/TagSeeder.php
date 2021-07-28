@@ -13,7 +13,7 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
-        $tags = ['html', 'css', 'bootstrap', 'sass', 'vue', 'laravle'];
+        $tags = ['html', 'css', 'bootstrap', 'sass', 'vue', 'laravel'];
 
         foreach ($tags as $tag) {
             $new_tag = new Tag();
