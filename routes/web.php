@@ -35,5 +35,5 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
 {
     Route::get('/', 'HomeController@index')->name('dashboard');
     Route::resource('posts', PostController::class);
-    
+    Route::resource('categories', CategoryController::class);
 });

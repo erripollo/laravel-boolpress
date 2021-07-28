@@ -42,6 +42,9 @@
                         <li class="nav-item {{Route::currentRouteName() === 'admin.posts.index' ? 'active' : '' }}">
                             <a class="nav-link" href="{{route('admin.posts.index')}}">Posts</a>
                         </li>
+                        <li class="nav-item {{Route::currentRouteName() === 'admin.categories.index' ? 'active' : '' }}">
+                            <a class="nav-link" href="{{route('admin.categories.index')}}">Categories</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
