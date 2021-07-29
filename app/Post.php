@@ -24,5 +24,12 @@ class Post extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+
+    public function incrementReadCount()
+    {
+        $this->reads++;
+        return $this->save();
+    }
     
 }
