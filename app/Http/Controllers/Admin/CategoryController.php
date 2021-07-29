@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -37,13 +38,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->all();
+        //dd($request->all());
+        //dd($request->name);
+
+        $request['slug'] = Str::slug($request->name);
+
+        //dd($request->all());
 
         $validate = $request->validate([
-            'name' => 'required | min:5 | max:25', 
+            'name' => 'required | min:5 | max:25',
+            'slug' => 'required | min:5 | max:25'
         ]);
 
         Category::create($validate);
+        return redirect()->route('admin.categories.index');
     }
 
     /**

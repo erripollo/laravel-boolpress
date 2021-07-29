@@ -14,10 +14,10 @@
               <small id="nameHelper" class="form-text text-muted">Type a name for this category</small>
             </div>
 
-    
+            
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
         </form>
 
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
     </div>
     
 @endsection
