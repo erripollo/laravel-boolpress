@@ -20,7 +20,16 @@
                         <td scope="row">{{ $category->id }}</td>
                         <td>{{ $category->name }}</td>
                         <td>{{ $category->slug }}</td>
-                        <td>Show | Edit | Delete</td>
+                        <td>
+                            <div class="d-flex">
+
+                                {{-- edit button --}}
+                                <a class="btn btn-secondary btn-sm mr-2" href="{{route('admin.categories.edit', $category->id)}}" role="button">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                            </div>
+                            Edit | Delete
+                        </td>
                     </tr>    
                 @endforeach
             </tbody>

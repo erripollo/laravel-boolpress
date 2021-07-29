@@ -73,7 +73,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -85,7 +85,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        
+        $request['slug'] = Str::slug($request->name);
+
+        $validate = $request->validate([
+            'name' => 'required | min:5 | max:25',
+            'slug' => 'required | min:5 | max:25'
+        ]);
+
+
+        $category->update($validate);
+        return redirect()->route('admin.categories.index');
     }
 
     /**
