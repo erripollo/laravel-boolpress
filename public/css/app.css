@@ -10987,7 +10987,8 @@ main a .card img {
   filter: brightness(0.7);
 }
 
-.main_blog .card-img-top {
+.main_blog .card-img-top,
+.popular_posts .card-img-top {
   height: 230px;
   -o-object-fit: cover;
      object-fit: cover;

@@ -16,6 +16,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css" integrity="sha512-3icgkoIO5qm2D4bGSUkPqeQ96LS8+ukJC7Eqhl1H5B2OJMEnFqLmNDxXVmtV/eq5M65tTDkUYS/Q0P4gvZv+yA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -87,21 +90,10 @@
                   </form>
                 </div>
             </div>
-          </nav>
-
-          <div class="jumbotron">
-              <div class="container">
-                  <h1 class="display-3">Boolpress</h1>
-                  <p class="lead">Jumbo helper text</p>
-                  <hr class="my-2">
-                  <p>More info</p>
-                  <p class="lead">
-                      <a class="btn btn-outline-success btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
-                  </p>
-              </div>
-          </div>
+        </nav>
 
         <main class="py-4">
+            @yield('jumbotron')
             @yield('content')
         </main>
     </div>

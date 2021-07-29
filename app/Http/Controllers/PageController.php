@@ -11,7 +11,11 @@ class PageController extends Controller
     {
         $posts = Post::orderBy('id', 'DESC')->take(5)->get();
         //dd($posts);
-        return view('guest.welcome', compact('posts'));
+
+        $popularPosts = Post::orderBy('reads', 'DESC')->take(3)->get();
+
+
+        return view('guest.welcome', compact('posts', 'popularPosts'));
     }
 
 

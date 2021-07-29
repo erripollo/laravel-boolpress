@@ -4,7 +4,10 @@
 
     <div class="container show">
         <h1 class="display-4">{{$post->title}}</h1>
-        <h5 class="mt-4">Category: 
+        <div class="views mt-4">
+            <i class="fas fa-eye"></i> {{ $post->reads }} 
+        </div>
+        <h5 class="mt-2">Category: 
             @if ($post->category)
                 <a href="{{route('categories.show', $post->category->slug)}}">{{$post->category->name}}</a>
             @else
