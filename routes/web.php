@@ -27,6 +27,11 @@ Route::resource('posts', PostController::class)->only(['index', 'show']);
 /* Pagine categories */
 Route::get('categories/{category:slug}', 'CategoryController@show')->name('categories.show');
 
+/* vue posts */
+Route::get('blog', function () {
+    return view ('blog');
+});
+
 
 Auth::routes();
 

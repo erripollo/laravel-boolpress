@@ -10942,3 +10942,63 @@ a.text-dark:focus {
   }
 }
 
+h1 {
+  color: white;
+}
+
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+main {
+  color: lightgray;
+}
+
+main a {
+  transition: 0.5s;
+}
+
+main a:hover {
+  -webkit-text-decoration-color: white;
+          text-decoration-color: white;
+}
+
+main a:hover img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+main a .card {
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+main a .card img {
+  border-radius: 1rem;
+  transition: 0.5s;
+}
+
+.carousel-inner {
+  border-radius: 1rem;
+}
+
+.carousel-inner img {
+  filter: brightness(0.7);
+}
+
+.main_blog .card-img-top,
+.popular_posts .card-img-top {
+  height: 230px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main_search .post-list:hover img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.main_search .post-list img {
+  border-radius: 1rem;
+}
+
