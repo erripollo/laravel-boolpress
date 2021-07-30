@@ -33,7 +33,8 @@ const app = new Vue({
     el: '#app',
 
     data: {
-        posts: null
+        posts: null,
+        catSel: 'all'
     },
 
     mounted() {

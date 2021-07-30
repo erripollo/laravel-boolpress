@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,7 +29,8 @@ Route::get('categories/{category:slug}', 'CategoryController@show')->name('categ
 
 /* vue posts */
 Route::get('blog', function () {
-    return view ('blog');
+    $categories = Category::all();
+    return view ('blog', compact('categories'));
 });
 
 
