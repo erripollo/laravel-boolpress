@@ -49875,8 +49875,10 @@ var app = new Vue({
   el: '#app',
   data: {
     posts: null,
-    catSel: 'all'
+    catSel: 'all',
+    search: ''
   },
+  methods: {},
   mounted: function mounted() {
     var _this = this;
 

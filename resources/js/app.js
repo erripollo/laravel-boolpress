@@ -34,7 +34,12 @@ const app = new Vue({
 
     data: {
         posts: null,
-        catSel: 'all'
+        catSel: 'all',
+        search: '', 
+    },
+
+    methods: {
+        
     },
 
     mounted() {

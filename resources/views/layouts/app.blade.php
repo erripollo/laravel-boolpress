@@ -85,12 +85,20 @@
                     @endguest
                 </ul>
                   <form class="form-inline my-2 my-lg-0" action="{{route('search')}}" method="GET">
-                    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search" required>
+                    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search" v-model="search" required>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                   </form>
                 </div>
             </div>
+            
+            <ul class="list-group" >
+                <li class="list-group-item" v-for="post in posts" v-if=" post.title.toLowerCase().includes(search.toLowerCase()) && search.length > 0" style="width: 400px">
+                    <h3>@{{post.title}}</h3>
+                    <p>@{{post.summary}}</p>
+                </li>
+            </ul>
         </nav>
+        
 
         <main class="py-4">
             @yield('jumbotron')
