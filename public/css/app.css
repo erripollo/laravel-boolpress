@@ -10979,6 +10979,20 @@ main a .card img {
   transition: 0.5s;
 }
 
+nav .container {
+  position: relative;
+}
+
+nav .container .list-group {
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  z-index: 3;
+  width: 500px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 .carousel-inner {
   border-radius: 1rem;
 }

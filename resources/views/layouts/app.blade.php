@@ -91,14 +91,20 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                   </form>
                 </div>
+
+
+                {{-- dinamic search window --}}
+                <ul class="list-group" >
+                    <li class="list-group-item" v-for="post in posts" v-if=" post.title.toLowerCase().includes(search.toLowerCase()) && search.length > 0">
+                        <a :href="'posts/' + post.id">
+                            <h3>@{{post.title}}</h3>
+                        </a>
+                        <p>@{{post.summary}}</p>
+                    </li>
+                </ul>
+
             </div>
 
-            <ul class="list-group" >
-                <li class="list-group-item" v-for="post in posts" v-if=" post.title.toLowerCase().includes(search.toLowerCase()) && search.length > 0" style="width: 400px">
-                    <h3>@{{post.title}}</h3>
-                    <p>@{{post.summary}}</p>
-                </li>
-            </ul>
         </nav>
         
 
