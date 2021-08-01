@@ -21,13 +21,15 @@
         </div>
     
         <div class="d-flex flex-wrap justify-content-center">
-            <div class="card text-left m-2" v-for="post in posts" v-if="post.category_id == catSel || catSel === 'all' " style="width: 350px;">
-                <img class="card-img-top" :src=" 'storage/' + post.image " :alt="post.title">
-                <div class="card-body px-1">
-                    <h4 class="card-title">@{{post.title}}</h4>
-                    <p class="card-text">@{{post.summary}}</p>
+            <a :href=" 'posts/' + post.id " v-for="post in posts" v-if="post.category_id == catSel || catSel === 'all' ">
+                <div class="card text-left m-2"  style="width: 350px;">
+                    <img class="card-img-top" :src=" 'storage/' + post.image " :alt="post.title">
+                    <div class="card-body px-1">
+                        <h4 class="card-title">@{{post.title}}</h4>
+                        <p class="card-text">@{{post.summary}}</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div> 
     </div>
 @endsection

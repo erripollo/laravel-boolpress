@@ -21,6 +21,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('css')
+    
 </head>
 <body class="bg-dark">
     <div id="app" class="bg-dark">
@@ -90,7 +92,7 @@
                   </form>
                 </div>
             </div>
-            
+
             <ul class="list-group" >
                 <li class="list-group-item" v-for="post in posts" v-if=" post.title.toLowerCase().includes(search.toLowerCase()) && search.length > 0" style="width: 400px">
                     <h3>@{{post.title}}</h3>
